@@ -18,9 +18,15 @@ const Layout = (props: ILayout): JSX.Element => {
                 <title>DEPT</title>
                 <meta name="description" content="Dept Test Project" />
                 <link rel="icon" href="/favicon.ico" />
+
+                <link rel="preload" href="/fonts/Teko/Teko-Light.ttf" as="font" crossOrigin="" />
+                <link rel="preload" href="/fonts/Teko/Teko-Regular.ttf" as="font" crossOrigin="" />
+                <link rel="preload" href="/fonts/Teko/Teko-Medium.ttf" as="font" crossOrigin="" />
+                <link rel="preload" href="/fonts/Teko/Teko-SemiBold.ttf" as="font" crossOrigin="" />
+                <link rel="preload" href="/fonts/Teko/Teko-Bold.ttf" as="font" crossOrigin="" />
             </Head>
 
-            <Header/>
+            <Header />
 
             <main className={styles.main}>
                 {children}
