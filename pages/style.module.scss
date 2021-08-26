@@ -1,4 +1,11 @@
+@import "dimen.scss";
+
 .container {
-  min-height: 100vh;
-  height: 100vh;
+  width: 100%;
+  max-width: $desktop;
+
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,9 +1,13 @@
 import { ReactNode } from 'react';
-import Head from 'next/head'
+
+
+//i18n
+import { useTranslation } from 'next-i18next';
 
 //layout components
 import Header from './Header';
 
+//style
 import styles from './style.module.scss'
 
 interface ILayout {
@@ -12,26 +16,16 @@ interface ILayout {
 
 const Layout = (props: ILayout): JSX.Element => {
     const { children } = props;
+    const { t } = useTranslation('common');
     return (
-        <div>
-            <Head>
-                <title>DEPT</title>
-                <meta name="description" content="Dept Test Project" />
-                <link rel="icon" href="/favicon.ico" />
+        <div className={styles.wrapper}>
+            <div className={styles.container}>
+                <Header />
 
-                <link rel="preload" href="/fonts/Teko/Teko-Light.ttf" as="font" crossOrigin="" />
-                <link rel="preload" href="/fonts/Teko/Teko-Regular.ttf" as="font" crossOrigin="" />
-                <link rel="preload" href="/fonts/Teko/Teko-Medium.ttf" as="font" crossOrigin="" />
-                <link rel="preload" href="/fonts/Teko/Teko-SemiBold.ttf" as="font" crossOrigin="" />
-                <link rel="preload" href="/fonts/Teko/Teko-Bold.ttf" as="font" crossOrigin="" />
-            </Head>
-
-            <Header />
-
-            <main className={styles.main}>
-                {children}
-            </main>
-
+                <main className={styles.main}>
+                    {children}
+                </main>
+            </div>
             <footer>
                 footer
             </footer>

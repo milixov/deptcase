@@ -1,18 +1,27 @@
 import type { NextPage } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Image from 'next/image'
 import Layout from '@components/Layout'
-
-import styles from './style.module.scss'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <Layout>
+    <Layout>
         layout
-      </Layout>
-    </div>
+    </Layout>
   )
 }
 
 export default Home
+
+interface IStaticProps {
+    locale: string
+}
+
+export async function getStaticProps(props: IStaticProps) {
+    const { locale } = props;
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ['common', 'header'])),
+      },
+    };
+}
