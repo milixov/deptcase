@@ -1,0 +1,14 @@
+@import 'dimen.scss';
+
+@mixin sm {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
