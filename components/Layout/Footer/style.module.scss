@@ -1,0 +1,136 @@
+@import "color.scss";
+@import "mixin.scss";
+@import "dimen.scss";
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: $safearea;
+
+    background-color: $black;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    hr {
+        border-color: $greyish-brown;
+        width: 100%;
+        border-width: 2px;
+    }
+
+    @include sm {
+        padding: 60px 20px;
+        height: fit-content
+    }
+}
+
+.top {
+    @include rowEndBet;
+    margin-bottom: 32px;
+
+    @include sm {
+        align-items: flex-start;
+    }
+}
+
+.topStart {
+    @include rowEndBet;
+}
+
+.bottom {
+    @include rowEndBet;
+    margin-top: 56px;
+
+    span {
+        flex-wrap: nowrap;
+    }
+
+    @include sm {
+        @include col;
+    }
+}
+
+.bottom * {
+    color: $warm-grey;
+    font-family: Arial;
+    font-size: 13px;
+
+    @include sm {
+        line-height: 21px;
+    }
+}
+
+.bottomStart {
+    @include rowEndBet;
+    list-style-type: none;
+    margin-left: 250px;
+
+    li {
+        margin-right: 30px;
+    }
+
+    @include sm {
+        @include col;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+}
+
+.logo {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+
+    @include sm {
+        display: none;
+    }
+}
+
+.links {
+    @include rowCenter;
+    list-style-type: none;
+    justify-content: flex-start;
+    margin-left: 150px;
+
+    @include sm {
+        margin-left: 0;
+        @include col;
+    }
+}
+
+.links > * {
+    margin-right: 26px;
+    cursor: pointer;
+    font-size: 18px;
+    color: $white;
+
+    @include sm {
+        font-size: 32px;
+    }
+}
+
+.social {
+    @include rowCenter;
+    justify-content: flex-end;
+
+    li {
+        margin-left: 30px;
+        height: 14px;
+        width: 14px;
+
+        @include sm {
+            margin-bottom: 30px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    @include sm {
+        @include col;
+    }
+}
+
+.icon {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}

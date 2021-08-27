@@ -9,5 +9,5 @@ module.exports = {
   i18n,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-  },
+  }
 }

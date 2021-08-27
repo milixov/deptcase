@@ -1,4 +1,6 @@
 {
     "appName": "DEPT",
-    "appDesc": "Test Project"
+    "appDesc": "Test Project",
+    "top": "top",
+    "scrollToTop": "scroll to top of the page"
 }

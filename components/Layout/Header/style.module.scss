@@ -2,18 +2,14 @@
 @import "dimen.scss";
 @import "color.scss";
 
-.container {
+.container {height: $appbar-height;
     width: 100%;
-    height: $appbar-height;
-    padding: $appbar-padding;
+    max-width: $safearea;
+    padding: 0 20px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    @include rowEndBet;
 
     @include sm {
-        padding: $appbar-padding-mobile;
         background-color: $white-two;
         align-items: center;
     }
@@ -26,6 +22,10 @@
             height: 14px;
             width: 50px;
         }
+    }
+
+    img:hover {
+        cursor: pointer;
     }
 }
 
@@ -51,11 +51,6 @@
     }
 }
 
-.line {
-    margin: $appbar-padding;
-    margin-top: 24px;
-
-    @include sm {
-        display: none;
-    }
+.drawer:hover {
+    cursor: pointer;
 }
