@@ -2,11 +2,46 @@
 @import 'color.scss';
 @import 'mixin.scss';
 
+.layout {
+  position: relative;
+}
+
+.drawer {
+  position: absolute;
+  z-index: 999;
+
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+    
+  transition: left 0.2s;
+}
+
+.drawerClose {
+  left: -100vw;
+  transition-timing-function: ease-out;
+}
+
+.drawerOpen {
+  left: 0;
+  transition-timing-function: ease-out;
+}
+
 .page { 
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $white-two;
+}
+
+.pageLock {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .footerWrapper {
@@ -70,6 +105,10 @@
   font-size: 22px;
   width: 120px;
   background-color: $white-two;
+
+  @include sm {
+    display: none;
+  }
 }
 
 .top:hover {

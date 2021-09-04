@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import DeptIcon from 'public/icons/icon-dept.svg'
 
-import FacebookIcon from 'public/icons/icon-fb.svg'
-import InstagramIcon from 'public/icons/icon-instagram.svg'
-import TwitterIcon from 'public/icons/icon-twitter.svg'
+//data
+import { FOOTER_LINKS, FOOTER_SOCIAL } from '@enum/data'
+
+//asset
+import DeptIcon from 'public/icons/icon-dept.svg'
 
 //i18n
 import { useTranslation } from 'next-i18next';
@@ -31,7 +32,7 @@ const Footer = (): JSX.Element => {
                     </div>
                     <ul className={styles.links}>
                         {
-                            LINKS.map(link =>
+                            FOOTER_LINKS.map(link =>
                                 <Link
                                     key={link.title}
                                     href={link.link}
@@ -47,7 +48,7 @@ const Footer = (): JSX.Element => {
                 </div>
                 <ul className={styles.social}>
                     {
-                        SOCIAL.map(social =>
+                        FOOTER_SOCIAL.map(social =>
                             <Link
                                 key={social.title}
                                 href={social.link}
@@ -79,48 +80,3 @@ const Footer = (): JSX.Element => {
 }
 
 export default Footer
-
-const LINKS = [
-    {
-        title: 'work',
-        link: '/work'
-    },
-    {
-        title: 'service',
-        link: '/service'
-    },
-    {
-        title: 'stories',
-        link: '/stories'
-    },
-    {
-        title: 'about',
-        link: '/about'
-    },
-    {
-        title: 'careers',
-        link: '/careers'
-    },
-    {
-        title: 'contact',
-        link: '/contact'
-    }
-]
-
-const SOCIAL = [
-    {
-        title: 'Facebook',
-        link: 'https://facebook.com/dept',
-        icon: FacebookIcon
-    },
-    {
-        title: 'Twitter',
-        link: 'https://twitter.com/dept',
-        icon: TwitterIcon
-    },
-    {
-        title: 'Instagram',
-        link: 'https://instagram.com/dept',
-        icon: InstagramIcon
-    }
-]
